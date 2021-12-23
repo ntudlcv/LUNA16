@@ -58,8 +58,8 @@ class luna16_dataset(Dataset):
         # Create mask
         mask = np.zeros_like(data) # x,y,z
         for coord, diameter in zip(coords, diameters):
-            min_coord = coord - diameter
-            max_coord = coord + diameter
+            min_coord = coord - diameter/2
+            max_coord = coord + diameter/2
             min_voxel_coord = world_2_voxel(min_coord, origin, spacing) # x,y,z
             max_voxel_coord = world_2_voxel(max_coord, origin, spacing) # x,y,z
             mask[min_voxel_coord[0]:max_voxel_coord[0], min_voxel_coord[1]:max_voxel_coord[1], min_voxel_coord[2]:max_voxel_coord[2]] = 1

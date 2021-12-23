@@ -3,7 +3,7 @@ import SimpleITK as sitk
 import matplotlib.pylab as plt
 from scrollview import ScrollView
 
-DATA_PATH = "data/subset1/1.3.6.1.4.1.14519.5.2.1.6279.6001.104562737760173137525888934217.mhd"
+DATA_PATH = "data/train/1.3.6.1.4.1.14519.5.2.1.6279.6001.104562737760173137525888934217.mhd"
 
 itkimage = sitk.ReadImage(DATA_PATH, sitk.sitkFloat32)
 ct_scan = sitk.GetArrayFromImage(itkimage)
